@@ -1,105 +1,105 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Random Champion Selector</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        h1 {
-            color: #4CAF50;
-        }
-        input {
-            padding: 5px;
-            font-size: 16px;
-        }
-        button {
-            padding: 7px 15px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        #result {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            background-color: #fff;
-        }
-    </style>
-</head>
-<body>
-
-    <h1>Random Champion Selector</h1>
-    <p>Enter the number of champions (N) you'd like to randomly select:</p>
-
-    <!-- Input field for user to specify 'N' -->
-    <label for="nInput">Number of Champions (N): </label>
-    <input type="number" id="nInput" min="1" required>
-    <button onclick="getRandomChampions()">Generate Team</button>
-
-    <div id="result">
-        <h2>Result:</h2>
-        <p id="output"></p>
-    </div>
-
-    <script>
-        // Dummy champion data (replace with actual data from champion.json if applicable)
-        const championData = [
-            "Kaisa", "Darius", "Kayle", "Vayne", "Viego", 
-			"Ornn", "Diana", "Nami", "Vladimir", "Karma", 
-			"Azir", "Zac", "Rammus", "Leona", "JarvanIV", 
-			"Mordekaiser", "Soraka", "Caitlyn", "Briar", 
-			"Gragas", "Riven", "Ziggs", "Aurora", "Rell", "Kayn", 
-			"Naafiri", "Zilean", "Hwei", "Lillia", "Shaco", "Velkoz", 
-			"Poppy", "Heimerdinger", "Tristana", "Lissandra", "Jhin", 
-			"Pyke", "Twitch", "Nocturne", "Ambessa", "XinZhao", "Sion", 
-			"Cassiopeia", "Maokai", "Shen", "Irelia", "Renata", "Gangplank", 
-			"Gnar", "Teemo", "MasterYi", "Trundle", "Taliyah", "Yasuo", "Ryze", 
-			"Veigar", "Ahri", "Fiora", "Draven", "Fiddlesticks", "Evelynn", 
-			"Jax", "Sona", "Nidalee", "Quinn", "MissFortune", "Akali", 
-			"AurelionSol", "Anivia", "Pantheon", "Ivern", "Kled", "Chogath",
-			"Senna", "Volibear", "Aphelios", "Ezreal", "Galio", "Skarner", 
-			"Kassadin", "Sejuani", "Kalista", "Illaoi", "Nunu", "Smolder", 
-			"RekSai", "Thresh", "Nasus", "Akshan", "Viktor", "Janna", "Nilah", 
-			"Blitzcrank", "Karthus", "Alistar", "Khazix", "Seraphine", "Yone", 
-			"Leblanc", "Belveth", "Sivir", "Singed", "Nautilus", "Mel", "Aatrox", 
-			"LeeSin", "Garen", "DrMundo", "Jinx", "Gwen", "Lulu", "KogMaw", "Brand", 
-			"Vi", "Sylas", "Warwick", "Camille", "Hecarim", "Varus", "Orianna", 
-			"Olaf", "Milio", "Kennen", "Talon", "Lux", "TwistedFate", "Jayce", 
-			"MonkeyKing", "Elise", "Shyvana", "Swain", "Zoe", "Urgot", "Ashe", 
-			"Braum", "Yorick", "TahmKench", "Xerath", "Qiyana", "Zyra", "Katarina", 
-			"Amumu", "Rakan", "Udyr", "Lucian", "Bard", "Yuumi", "Ekko", "Tryndamere", 
-			"Xayah", "Syndra", "Vex", "Sett", "Taric", "Samira", "Graves", "Rengar", 
-			"Zeri", "Morgana", "Neeko", "KSante", "Fizz", "Renekton", "Rumble", 
-			"Corki", "Kindred", "Zed", "Malzahar", "Annie", "Malphite"
-        ];
-
-        // Function to select 'N' random champions
-        function getRandomChampions() {
-            const n = parseInt(document.getElementById('nInput').value, 10);
-
-            // Input validation for values outside the range 1-170 or invalid input
-            if (isNaN(n) || n < 1 || n > 170) {
-                document.getElementById('output').innerText = "I love Metrilus";
-                return;
-            }
-
-            // Shuffle and pick 'N' champions
-            const shuffled = championData.sort(() => 0.5 - Math.random());
-            const randomChampions = shuffled.slice(0, n);
-
-            // Display result
-            document.getElementById('output').innerText = "Team: " + randomChampions.join(", ");
-        }
-    </script>
-
-</body>
+ <html>
+ <head>
+     <title>Random Champion Selector</title>
+     <style>
+         body {
+             font-family: Arial, sans-serif;
+             margin: 20px;
+             padding: 20px;
+             background-color: #f9f9f9;
+             color: #333;
+         }
+         h1 {
+             color: #4CAF50;
+         }
+         input {
+             padding: 5px;
+             font-size: 16px;
+         }
+         button {
+             padding: 7px 15px;
+             background-color: #4CAF50;
+             color: white;
+             border: none;
+             cursor: pointer;
+             font-size: 16px;
+         }
+         button:hover {
+             background-color: #45a049;
+         }
+         #result {
+             margin-top: 20px;
+             padding: 10px;
+             border: 1px solid #ddd;
+             background-color: #fff;
+         }
+     </style>
+ </head>
+ <body>
+ 
+     <h1>Random Champion Selector</h1>
+     <p>Enter the number of champions (N) you'd like to randomly select:</p>
+ 
+     <!-- Input field for user to specify 'N' -->
+     <label for="nInput">Number of Champions (N): </label>
+     <input type="number" id="nInput" min="1" max="170" required>
+     <button onclick="getRandomChampions()">Generate Team</button>
+ 
+     <div id="result">
+         <h2>Result:</h2>
+         <p id="output"></p>
+     </div>
+ 
+     <script>
+         // Dummy champion data (replace with actual data from champion.json if applicable)
+         const championData = [
+             "Kaisa", "Darius", "Kayle", "Vayne", "Viego", 
+ 			"Ornn", "Diana", "Nami", "Vladimir", "Karma", 
+ 			"Azir", "Zac", "Rammus", "Leona", "JarvanIV", 
+ 			"Mordekaiser", "Soraka", "Caitlyn", "Briar", 
+ 			"Gragas", "Riven", "Ziggs", "Aurora", "Rell", "Kayn", 
+ 			"Naafiri", "Zilean", "Hwei", "Lillia", "Shaco", "Velkoz", 
+ 			"Poppy", "Heimerdinger", "Tristana", "Lissandra", "Jhin", 
+ 			"Pyke", "Twitch", "Nocturne", "Ambessa", "XinZhao", "Sion", 
+ 			"Cassiopeia", "Maokai", "Shen", "Irelia", "Renata", "Gangplank", 
+ 			"Gnar", "Teemo", "MasterYi", "Trundle", "Taliyah", "Yasuo", "Ryze", 
+ 			"Veigar", "Ahri", "Fiora", "Draven", "Fiddlesticks", "Evelynn", 
+ 			"Jax", "Sona", "Nidalee", "Quinn", "MissFortune", "Akali", 
+ 			"AurelionSol", "Anivia", "Pantheon", "Ivern", "Kled", "Chogath",
+ 			"Senna", "Volibear", "Aphelios", "Ezreal", "Galio", "Skarner", 
+ 			"Kassadin", "Sejuani", "Kalista", "Illaoi", "Nunu", "Smolder", 
+ 			"RekSai", "Thresh", "Nasus", "Akshan", "Viktor", "Janna", "Nilah", 
+ 			"Blitzcrank", "Karthus", "Alistar", "Khazix", "Seraphine", "Yone", 
+ 			"Leblanc", "Belveth", "Sivir", "Singed", "Nautilus", "Mel", "Aatrox", 
+ 			"LeeSin", "Garen", "DrMundo", "Jinx", "Gwen", "Lulu", "KogMaw", "Brand", 
+ 			"Vi", "Sylas", "Warwick", "Camille", "Hecarim", "Varus", "Orianna", 
+ 			"Olaf", "Milio", "Kennen", "Talon", "Lux", "TwistedFate", "Jayce", 
+ 			"MonkeyKing", "Elise", "Shyvana", "Swain", "Zoe", "Urgot", "Ashe", 
+ 			"Braum", "Yorick", "TahmKench", "Xerath", "Qiyana", "Zyra", "Katarina", 
+ 			"Amumu", "Rakan", "Udyr", "Lucian", "Bard", "Yuumi", "Ekko", "Tryndamere", 
+ 			"Xayah", "Syndra", "Vex", "Sett", "Taric", "Samira", "Graves", "Rengar", 
+ 			"Zeri", "Morgana", "Neeko", "KSante", "Fizz", "Renekton", "Rumble", 
+ 			"Corki", "Kindred", "Zed", "Malzahar", "Annie", "Malphite"
+         ];
+ 
+         // Function to select 'N' random champions
+         function getRandomChampions() {
+             const n = parseInt(document.getElementById('nInput').value, 10);
+ 
+             // Input validation
+             if (isNaN(n) || n < 1) {
+                 document.getElementById('output').innerText = "Please enter a valid number greater than 0.";
+                 return;
+             }
+ 
+             // Shuffle and pick 'N' champions
+             const shuffled = championData.sort(() => 0.5 - Math.random());
+             const randomChampions = shuffled.slice(0, n);
+ 
+             // Display result
+             document.getElementById('output').innerText = "Team: " + randomChampions.join(", ");
+         }
+     </script>
+ 
+ </body>
